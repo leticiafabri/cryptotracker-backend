@@ -1,6 +1,6 @@
 # cryptotracker
 
-CryptoTracker é uma API REST desenvolvida em **Java 17 + Spring Boot 3**, com autenticação via **JWT**, banco de dados em memória **H2**, e documentação automática via **Swagger UI**.
+CryptoTracker é um projeto de backend desenvolvido em **Java 17 + Spring Boot 3**, com autenticação via **JWT**, banco de dados em memória **H2**, e documentação automática via **Swagger UI**.
 
 O projeto contém 6 CRUDs completos:
 
