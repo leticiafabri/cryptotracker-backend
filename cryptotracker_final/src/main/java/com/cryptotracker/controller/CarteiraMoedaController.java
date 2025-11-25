@@ -9,8 +9,10 @@ import java.util.List;
 public class CarteiraMoedaController {
     private final CarteiraMoedaService service;
     public CarteiraMoedaController(CarteiraMoedaService service){this.service=service;}
-    @PostMapping public ResponseEntity<CarteiraMoeda> adicionar(@RequestParam Long carteiraId, @RequestParam Long moedaId, @RequestParam double quantidade){
-        return ResponseEntity.ok(service.adicionar(carteiraId, moedaId, quantidade));
+    @PostMapping
+    public ResponseEntity<CarteiraMoeda> adicionar(@RequestBody CarteiraMoedaDTO dto)
+    {
+        return ResponseEntity.ok(service.adicionar(dto.carteiraId(), dto.moedaId(), dto.quantidade()));
     }
     @GetMapping("/carteira/{carteiraId}") public List<CarteiraMoeda> listarPorCarteira(@PathVariable Long carteiraId){ return service.listarPorCarteira(carteiraId); }
     @DeleteMapping("/{id}") public ResponseEntity<?> remover(@PathVariable Long id){ service.remover(id); return ResponseEntity.ok().build(); }
